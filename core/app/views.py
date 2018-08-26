@@ -73,7 +73,7 @@ def all_probs(request):
 	three_days_ago = datetime.utcnow() - timedelta(days=1)
 
 	data = db.tweets.aggregate([
-		{"$project": {"prob_type": 1}},
+		{"$project": {"prob_type": 1, "user.location": 1}},
 		{"$group":{"_id": "$prob_type", "count": {"$sum": 1}}}
 		])
 

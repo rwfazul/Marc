@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def home(request):
 	return render(request, 'app_templates/home.html')
+
+def form(request):
+	return render(request, 'app_templates/forms.html')

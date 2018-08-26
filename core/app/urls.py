@@ -1,9 +1,12 @@
 from django.urls import path
+from app import views
+from django.contrib.auth import views as auth_views
 
-from . import views
 
 urlpatterns = [
 	path('', views.home, name='home'),
+
+	path('accounts/login/', auth_views.LoginView.as_view(template_name='login2.html')),
 
 	path('importFromFile', views.importFromFile, name='importFromFile'),
 
@@ -14,5 +17,8 @@ urlpatterns = [
 	path('fix/', views.fix, name='fix'),
 
 	path('charts/<slug:prob_type>', views.charts, name='charts'),
+	
+	path('empresa/<int:pk>', views.empresa, name='empresa'),
+
 
 ]

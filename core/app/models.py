@@ -7,12 +7,12 @@ class Empresa(models.Model):#define o form aqui
 	razao_social = models.CharField(max_length=255)
 	nome_fantasia = models.CharField(max_length=255)
 	cnpj = models.CharField(max_length=255)
-	email = models.CharField(max_length=255)
-	password = models.CharField(max_length=255)
+	email = models.CharField(max_length=255, null=True)
+	password = models.CharField(max_length=255, null=True)
 	filtro = models.CharField(max_length=255)
-	proceso_interno = models.IntegerField();
-	processo_externo = models.IntegerField();
-	transportadora = models.CharField(max_length=255);
+	proceso_interno = models.IntegerField(null=True)
+	processo_externo = models.IntegerField(null=True)
+	transportadora = models.CharField(max_length=255, null=True)
 
 	'''carater = models.IntegerField()
 	quantidade = models.IntegerField()
@@ -22,6 +22,6 @@ class Empresa(models.Model):#define o form aqui
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	'''
 	class Meta:
-		db_table = 'itens' # nome para o banco
-		verbose_name = 'item' 
-		verbose_name_plural = 'itens'
+		db_table = 'empresas' # nome para o banco
+		verbose_name = 'empresa' 
+		verbose_name_plural = 'empresas'

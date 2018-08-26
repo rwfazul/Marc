@@ -15,7 +15,6 @@ db = client['hackaton']
 def home(request):
 	return render(request, 'app_templates/home.html')
 
-<<<<<<< HEAD
 
 
 def teste(request):
@@ -34,7 +33,6 @@ def teste(request):
 													print(tweet)'''
 
 	return render(request, 'app_templates/home.html')
-=======
+
 def form(request):
 	return render(request, 'app_templates/forms.html')
->>>>>>> d1d557cfaf2278d4c6fba550fb876708fac88df1

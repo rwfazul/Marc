@@ -15,7 +15,7 @@ urlpatterns = [
 	path('fix/', views.fix, name='fix'),
 
 	path('charts/<slug:prob_type>', views.charts, name='charts'),
-	
+
 	path('empresa/<int:pk>', views.empresa, name='empresa'),
 
 	path('charts/json/<slug:prob_type>', views.charts_json, name='charts_json'),

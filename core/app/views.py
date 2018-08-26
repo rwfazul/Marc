@@ -13,6 +13,10 @@ from bson.json_util import dumps
 import pymongo
 from pymongo import MongoClient
 
+
+from .forms import EmpresaForm
+
+
 client = MongoClient('localhost', 27017)
 db = client['hackthon']
 # Create your views here.
@@ -26,7 +30,9 @@ def form(request):
 def dashboard(request):
 	return render(request, 'app_templates/home.html')
 
+
 def importFromFile(request):
+
 	#iglob(os.path.expanduser('~/Tweets/*.txt'))
 	for fname in iglob(os.path.expanduser('~/Tweets/*.txt')):
 		with open(fname) as fin:
@@ -36,6 +42,34 @@ def importFromFile(request):
 			tweets.insert_one(tweet).inserted_id
 
 	return render(request, 'app_templates/home.html')
+
+
+
+
+
+def cadastroEmpresa(request):
+	if request.method == "POST":
+
+		form = EmpresaForm(request.POST)
+
+		if form.is_valid():
+
+			print ("PRaga deu")
+
+
+	else: 
+
+		form = EmpresaForm()
+	
+	context = {
+    	'form': form
+	}
+
+	return render(request, 'app_templates/forms.html', context)
+    
+
+
+
 
 def charts(request, prob_type):
 	return render(request, 'app_templates/charts.html')
@@ -58,3 +92,4 @@ def forms(request):
 
 def fix(request):
 	return render(request, 'app_templates/fix.html')
+

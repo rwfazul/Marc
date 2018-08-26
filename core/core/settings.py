@@ -37,11 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'app',
     'crispy_forms',
-
-    'app'
 ]
-
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -82,16 +81,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',       
         'NAME': 'sap',
-        'USER': 'root',
+        'USER': 'hack',
         'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '3306',
     }
-}'''
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -111,6 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_REDIRECT_URL = '/dashboard'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

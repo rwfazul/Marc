@@ -13,15 +13,12 @@ db = client['hackaton']
 
 
 def home(request):
+
+	pprint.pprint(posts.find_one())
+	
 	return render(request, 'app_templates/home.html')
 
-<<<<<<< HEAD
-
-
 def teste(request):
-
-	#iglob(os.path.expanduser('~/Tweets/*.txt'))
-
 
 	for fname in iglob(os.path.expanduser('~/Tweets/*.txt')):
 		with open(fname) as fin:
@@ -34,7 +31,7 @@ def teste(request):
 													print(tweet)'''
 
 	return render(request, 'app_templates/home.html')
-=======
+
+
 def form(request):
 	return render(request, 'app_templates/forms.html')
->>>>>>> d1d557cfaf2278d4c6fba550fb876708fac88df1

@@ -10,6 +10,6 @@ urlpatterns = [
 
 	path('teste', views.teste, name='teste'),
 
-	path('form/', views.form, name='form')
+	path('form/', views.cadastroEmpresa, name='form')
 
 ]

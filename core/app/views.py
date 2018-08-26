@@ -7,6 +7,10 @@ import json
 import pymongo
 from pymongo import MongoClient
 
+
+from .forms import EmpresaForm
+
+
 client = MongoClient('localhost', 27017)
 db = client['hackaton']
 # Create your views here.
@@ -14,6 +18,9 @@ db = client['hackaton']
 
 def home(request):
 	return render(request, 'app_templates/home.html')
+
+
+
 
 
 
@@ -34,5 +41,30 @@ def teste(request):
 
 	return render(request, 'app_templates/home.html')
 
-def form(request):
-	return render(request, 'app_templates/forms.html')
+
+
+
+
+def cadastroEmpresa(request):
+	if request.method == "POST":
+
+		form = EmpresaForm(request.POST)
+
+		if form.is_valid():
+
+			print ("PRaga deu")
+
+
+	else: 
+
+		form = EmpresaForm()
+	
+	context = {
+    	'form': form
+	}
+
+	return render(request, 'app_templates/forms.html', context)
+    
+
+
+

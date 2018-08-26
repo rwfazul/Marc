@@ -1,5 +1,14 @@
 from django.shortcuts import render
 
+from glob import iglob
+import os.path
+import json
+
+import pymongo
+from pymongo import MongoClient
+
+client = MongoClient('localhost', 27017)
+db = client['hackaton']
 # Create your views here.
 
 
@@ -9,6 +18,7 @@ def home(request):
 def dashboard(request):
 	return render(request, 'app_templates/home.html')
 
+<<<<<<< HEAD
 def charts(request):
 	return render(request, 'app_templates/charts.html')
 

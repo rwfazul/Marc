@@ -4,8 +4,7 @@ from django.db import models
 
 class Empresa(models.Model):#define o form aqui
 	#chaves estrangeiras????
-	razao_social = models.CharField(max_length=255)
-	nome_fantasia = models.CharField(max_length=255)
+	razaoSocial = models.CharField(max_length=255)
 	cnpj = models.CharField(max_length=255)
 	email = models.CharField(max_length=255, null=True)
 	password = models.CharField(max_length=255, null=True)
@@ -13,14 +12,11 @@ class Empresa(models.Model):#define o form aqui
 	proceso_interno = models.IntegerField(null=True)
 	processo_externo = models.IntegerField(null=True)
 	transportadora = models.CharField(max_length=255, null=True)
+	keyWords = models.CharField(max_length=255)
+	processoInterno = models.IntegerField();
+	processoExterno = models.IntegerField();
+	transportadora = models.CharField(max_length=255);
 
-	'''carater = models.IntegerField()
-	quantidade = models.IntegerField()
-	imagem = models.FileField(upload_to='imagens/', null=False)
-	status = models.ForeignKey(StatusItem, on_delete=models.CASCADE)
-	tipoItem = models.ForeignKey(TipoItem, on_delete=models.CASCADE)
-	user = models.ForeignKey(User, on_delete=models.CASCADE)
-	'''
 	class Meta:
 		db_table = 'empresas' # nome para o banco
 		verbose_name = 'empresa' 

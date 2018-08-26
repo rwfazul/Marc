@@ -69,7 +69,7 @@ def charts_json(request, prob_type):
 
 def all_probs(request):
 	data = db.tweets.aggregate([
-		{"$project": {"prob_type": 1}},
+		{"$project": {"prob_type": 1, "user.location": 1}},
 		{"$group":{"_id": "$prob_type", "count": {"$sum": 1}}}
 		])
 

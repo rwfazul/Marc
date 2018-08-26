@@ -35,7 +35,7 @@
                 </div>
                 <a href="#">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left"><a href="/fix">Ver detalhes</a></span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -43,21 +43,21 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-green">
+            <div class="panel panel-red">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
                             <i class="fa fa-exchange   fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
+                            <div class="huge" id="extraviados">12</div>
                             <div>Produtos extraviados</div>
                         </div>
                     </div>
                 </div>
                 <a href="#">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left"><a href="/charts/extraviados">Ver detalhes</a></span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -65,21 +65,21 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-yellow">
+            <div class="panel panel-red">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
                             <i class="fa    fa-clock-o  fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">124</div>
+                            <div class="huge" id="atrasados">124</div>
                             <div>Produtos atrasados</div>
                         </div>
                     </div>
                 </div>
                 <a href="#">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left"><a href="/charts/atrasados">Ver detalhes</a></span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -94,14 +94,14 @@
                             <i class="fa  fa-times   fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
+                            <div class="huge" id="danificados">13</div>
                             <div>Produtos danificados</div>
                         </div>
                     </div>
                 </div>
                 <a href="#">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left"><a href="/charts/danificados">Ver detalhes</a></span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -143,13 +143,9 @@ $(function() {
                     var doc = JSON.parse(dados[i]);
                     vet.push(doc);
                 }
-                console.log(vet[0]._id)
                 var data = [{
                     label: vet[0]._id.capitalize(),
                     data: vet[0].count
-                }, {
-                    label: ' Outros',
-                    data: vet[1].count
                 }, {
                     label: vet[2]._id.capitalize(),
                     data: vet[2].count
@@ -157,6 +153,10 @@ $(function() {
                     label: vet[3]._id.capitalize(),
                     data: vet[3].count
                 }];
+                $("#extraviados").text(vet[0].count);
+                $("#atrasados").text(vet[2].count);
+                $("#danificados").text(vet[3].count);
+
 
                 var plotObj = $.plot($("#flot-pie-chart"), data, {
                 series: {

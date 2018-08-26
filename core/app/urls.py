@@ -14,5 +14,5 @@ urlpatterns = [
 	path('fix/', views.fix, name='fix'),
 
 	path('charts/<slug:prob_type>', views.charts, name='charts'),
-
+	path('all-probs', views.all_probs, name='all_probs'),
 ]

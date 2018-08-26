@@ -39,7 +39,19 @@ def charts(request, prob_type):
 	# last_days = datetime.today() - timedelta(days=7)
 	# last_days = time.mktime(last_days.timetuple())
 
-	data = db.tweets.find({"prob_type": prob_type},{"created_at":1, "location":1, "followers_count":1, "reply_count":1, "retweet_count":1, "favorite_count":1, "timestamp_ms":1})
+	data = db.tweets.find({"prob_type": prob_type},{"location":1})
+
+	context = {
+		"data": data
+	}
+
+	return render(request, 'app_templates/charts.html', context)
+
+def all_probs(request):
+	data = db.tweets.aggregate([
+		{"$project": {"prob_type": 1}},
+		{"$group":{"_id": "$prob_type", "count": {"$sum": 1}}}
+		])
 
 	context = {
 		"data": data

@@ -18,6 +18,8 @@ urlpatterns = [
 	
 	path('empresa/<int:pk>', views.empresa, name='empresa'),
 
-	path('charts/json/<slug:prob_type>', views.charts_json, name='charts_json'),	
+	path('charts/json/<slug:prob_type>', views.charts_json, name='charts_json'),
+
+	path('all-probs', views.all_probs, name='all_probs'),
 
 ]

@@ -3,6 +3,8 @@ from django.shortcuts import render
 from glob import iglob
 import os.path
 import json
+import time
+from datetime import datetime, timedelta
 
 import pymongo
 from pymongo import MongoClient
@@ -33,8 +35,17 @@ def importFromFile(request):
 
 	return render(request, 'app_templates/home.html')
 
-def charts(request):
-	return render(request, 'app_templates/charts.html')
+def charts(request, prob_type):
+	# last_days = datetime.today() - timedelta(days=7)
+	# last_days = time.mktime(last_days.timetuple())
+
+	data = db.tweets.find({"prob_type": prob_type},{"created_at":1, "location":1, "followers_count":1, "reply_count":1, "retweet_count":1, "favorite_count":1, "timestamp_ms":1})
+
+	context = {
+		"data": data
+	}
+
+	return render(request, 'app_templates/charts.html', context)
 
 def charts_two(request):
 	return render(request, 'app_templates/charts-two.html')

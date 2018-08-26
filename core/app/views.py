@@ -13,25 +13,25 @@ db = client['hackaton']
 
 
 def home(request):
-
-	pprint.pprint(posts.find_one())
-	
-	return render(request, 'app_templates/home.html')
-
-def teste(request):
-
-	for fname in iglob(os.path.expanduser('~/Tweets/*.txt')):
-		with open(fname) as fin:
-			tweet = json.load(fin)
-			
-			tweets = db.tweets
-			tweets.insert_one(tweet).inserted_id
-
-			'''for tweet in fin:
-													print(tweet)'''
-
-	return render(request, 'app_templates/home.html')
-
+	return render(request, 'login.html')
 
 def form(request):
 	return render(request, 'app_templates/forms.html')
+
+def dashboard(request):
+	return render(request, 'app_templates/home.html')
+
+def charts(request):
+	return render(request, 'app_templates/charts.html')
+
+def charts_two(request):
+	return render(request, 'app_templates/charts-two.html')
+
+def tables(request):
+	return render(request, 'app_templates/tables.html')
+
+def forms(request):
+	return render(request, 'app_templates/forms.html')
+
+def fix(request):
+	return render(request, 'app_templates/fix.html')

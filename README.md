@@ -1,6 +1,6 @@
 # Arco Team
 
-Tecnlogias utilizadas:
+Tecnologias utilizadas:
 
 ```
 Python - Django

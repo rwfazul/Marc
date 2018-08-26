@@ -26,14 +26,9 @@ def form(request):
 def dashboard(request):
 	return render(request, 'app_templates/home.html')
 
-<<<<<<< HEAD
 
-
-
-def teste(request):
-=======
 def importFromFile(request):
->>>>>>> 700242695110b3faac5801f248203993bf21cad0
+
 
 	#iglob(os.path.expanduser('~/Tweets/*.txt'))
 
@@ -46,7 +41,6 @@ def importFromFile(request):
 
 	return render(request, 'app_templates/home.html')
 
-<<<<<<< HEAD
 
 
 
@@ -74,7 +68,7 @@ def cadastroEmpresa(request):
 
 
 
-=======
+
 def charts(request, prob_type):
 	# last_days = datetime.today() - timedelta(days=7)
 	# last_days = time.mktime(last_days.timetuple())
@@ -98,4 +92,4 @@ def forms(request):
 
 def fix(request):
 	return render(request, 'app_templates/fix.html')
->>>>>>> 700242695110b3faac5801f248203993bf21cad0
+

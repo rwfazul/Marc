@@ -13,10 +13,7 @@ urlpatterns = [
 	path('fix/', views.fix, name='fix'),
 
 
-
-	path('teste', views.teste, name='teste'),
-
-	path('forms/', views.cadastroEmpresa, name='forms')
+	path('forms/', views.cadastroEmpresa, name='forms'),
 
 	path('charts/<slug:prob_type>', views.charts, name='charts'),
 

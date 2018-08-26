@@ -18,7 +18,6 @@ def home(request):
 def dashboard(request):
 	return render(request, 'app_templates/home.html')
 
-<<<<<<< HEAD
 def charts(request):
 	return render(request, 'app_templates/charts.html')
 

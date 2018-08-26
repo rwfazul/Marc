@@ -14,6 +14,9 @@ db = client['hackaton']
 def home(request):
 	return render(request, 'login.html')
 
+def form(request):
+	return render(request, 'app_templates/forms.html')
+
 def dashboard(request):
 	return render(request, 'app_templates/home.html')
 

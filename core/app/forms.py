@@ -8,4 +8,4 @@ class EmpresaForm(forms.ModelForm):
 
 	class Meta:
 		model = Empresa
-		fields = ('razaoSocial', 'cnpj', 'keyWords', 'processoInterno', 'processoExterno', 'transportadora')
+		fields = ('razaoSocial','cnpj','keyWords', 'processoInterno', 'processoExterno', 'transportadora')

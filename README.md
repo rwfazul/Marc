@@ -28,5 +28,5 @@ pytz==2018.5
 requests==2.19.1
 six==1.11.0
 urllib3==1.23
-
 ```
+O arquivo authenticate.py está no gitignore pois contem chaves privadas que fazem o acesso a API do twitter.

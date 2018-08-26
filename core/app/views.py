@@ -62,7 +62,7 @@ def charts_two(request):
 def charts_json(request, prob_type):
 	three_days_ago = datetime.utcnow() - timedelta(days=1)
 
-	data = db.tweets.find({"prob_type": prob_type},{"created_at":1, "user.location":1, "followers_count":1, "reply_count":1, "retweet_count":1, "favorite_count":1, "timestamp_ms":1})
+	data = db.tweets.find({"prob_type": prob_type, 'created_at': { '$gte': three_days_ago }},{"created_at":1, "user.location":1, "followers_count":1, "reply_count":1, "retweet_count":1, "favorite_count":1, "timestamp_ms":1})
 	lista = []
 	for d in data:
 		lista.append(dumps(d))

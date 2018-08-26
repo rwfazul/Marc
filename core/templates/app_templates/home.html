@@ -2,188 +2,207 @@
 {% load staticfiles %}
 
 {% block content %}
+<style>.col-lg-3.col-md-6{ display: block; }</style>
 <div id="page-wrapper">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <div class="row">
-        <p>Visão geral das entregas</p>
-    <div class="col-lg-6 col-lg-offset-3">
-
-
-    <div class="flot-chart-content" id="flot-bar-chart"></div>
-
-    </div>
-</div>
-    <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-wrench fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
-                            <div>Sugestões</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left"><a href="/fix">Ver detalhes</a></span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-exchange   fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge" id="extraviados">12</div>
-                            <div>Produtos extraviados</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left"><a href="/charts/extraviados">Ver detalhes</a></span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa    fa-clock-o  fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge" id="atrasados">124</div>
-                            <div>Produtos atrasados</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left"><a href="/charts/atrasados">Ver detalhes</a></span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa  fa-times   fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge" id="danificados">13</div>
-                            <div>Produtos danificados</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left"><a href="/charts/danificados">Ver detalhes</a></span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-lg-offset-3">
-        <div class="flot-chart">
-            <div class="flot-chart-content" id="flot-pie-chart"></div>
-        </div>
-    </div>
-
-
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Dashboard</h1>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3">
+			<div class="flot-chart-content" id="flot-bar-chart"></div>
+		</div>
+	</div>
+	<!-- /.row -->
+	<div class="row">
+		<div class="col-lg-6 col-md-6" style="margin-top: 7%;"> 
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-wrench fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge" id="sucesso"></div>
+									<div>Sucesso de vendas</div>
+								</div>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left"><a href="/fix">Ver detalhes</a></span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="panel panel-red">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa  fa-times   fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge" id="danificados"></div>
+									<div>Produtos danificados</div>
+								</div>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left"><a href="/charts/danificados">Ver detalhes</a></span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<div class="panel panel-red">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa  fa-clock-o fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge" id="atrasados"></div>
+									<div>Produtos atrasados</div>
+								</div>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left"><a href="/charts/atrasados">Ver detalhes</a></span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="panel panel-red">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-exchange   fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge" id="extraviados"></div>
+									<div>Produtos extraviados</div>
+								</div>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left"><a href="/charts/extraviados">Ver detalhes</a></span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 col-md-offset-1">
+			<div class="flot-chart">
+				<div class="flot-chart-content" id="flot-pie-chart"></div>
+			</div>
+		</div>
+	</div>
+	<p style="float:right;font-weight:500">Visão geral das entregas do dia <span id="date"></span></p>
 </div>
 <!-- /#page-wrapper -->
 {% endblock content %}
 {% block javascript %}
-    <script type="text/javascript" src="{% static 'vendor/flot/jquery.flot.js' %}"></script>
-    <script type="text/javascript" src="{% static 'vendor/flot/jquery.flot.pie.js' %}"></script>
-    <script type="text/javascript" src="{% static 'vendor/flot/jquery.flot.resize.js' %}"></script>
-    <script type="text/javascript" src="{% static 'vendor/flot/jquery.flot.time.js' %}"></script>
-    <script type="text/javascript" src="{% static 'vendor/flot-tooltip/jquery.flot.tooltip.min.js' %}"></script>
-    <script type="text/javascript">
-        
-$(function() {
-    String.prototype.capitalize = function() {
-    return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
-};
- $(document).ready(function(){
-        $.ajax({
-            type: 'GET',
-            dataType: 'json',
-            url: '/all-probs',
-            success: function(response) {
-                var dados = response.data;
-                var vet = [];
-                for (var i = 0; i < dados.length; i++) { 
-                    var doc = JSON.parse(dados[i]);
-                    vet.push(doc);
-                }
-                var data = [{
-                    label: vet[0]._id.capitalize(),
-                    data: vet[0].count
-                }, {
-                    label: vet[2]._id.capitalize(),
-                    data: vet[2].count
-                }, {
-                    label: vet[3]._id.capitalize(),
-                    data: vet[3].count
-                }];
-                $("#extraviados").text(vet[0].count);
-                $("#atrasados").text(vet[2].count);
-                $("#danificados").text(vet[3].count);
+<script type="text/javascript" src="{% static 'vendor/flot/jquery.flot.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/flot/jquery.flot.pie.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/flot/jquery.flot.resize.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/flot/jquery.flot.time.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/flot-tooltip/jquery.flot.tooltip.min.js' %}"></script>
+<script type="text/javascript">
+	
+	$(function() {
+		String.prototype.capitalize = function() {
+			return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+		};
+		$(document).ready(function(){
+			$.ajax({
+				type: 'GET',
+				dataType: 'json',
+				url: '/all-probs',
+				success: function(response) {
+					var dados = response['data'];
+					var total = response['total_vendas'];
+					var vet = [];
+					for (var i = 0; i < dados.length; i++) { 
+						var doc = JSON.parse(dados[i]);
+						vet.push(doc);
+					}
+					var danificados = (vet[0].count / total);
+					var atrasados = (vet[2].count / total);
+					var extraviados = (vet[3].count / total);
+					var sucesso = (vet[0].count + vet[2].count + vet[3].count) / total;
 
+					var data = [{
+						label: '&nbsp; ' + vet[0]._id.capitalize(),
+						data: danificados
+					}, {
+						label: '&nbsp; ' + vet[2]._id.capitalize(),
+						data: atrasados
+					}, {
+						label: '&nbsp; ' + vet[3]._id.capitalize(),
+						data: extraviados
+					}];
+					$("#extraviados").text(+(extraviados * 100).toFixed(2) + '%');
+					$("#atrasados").text(+(atrasados * 100).toFixed(2) + '%');
+					$("#danificados").text(+(danificados * 100).toFixed(2) + '%');
+					$("#sucesso").text(+(100 - (sucesso * 100)).toFixed(2) + '%');
 
-                var plotObj = $.plot($("#flot-pie-chart"), data, {
-                series: {
-                    pie: {
-                        show: true
-                    }
-                    },
-                    grid: {
-                    hoverable: true
-                        },
-                    tooltip: true,
-                    tooltipOpts: {
-                        content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
-                    shifts: {
-                        x: 20,
-                        y: 0
-                    },
-                        defaultTheme: false
-                    }
-                });
-           }
-        });
-    });
+					var plotObj = $.plot($("#flot-pie-chart"), data, {
+						series: {
+							pie: {
+								show: true
+							}
+						},
+						grid: {
+							hoverable: true
+						},
+						tooltip: true,
+						tooltipOpts: {
+						content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+						shifts: {
+							x: 20,
+							y: 0
+						},
+						defaultTheme: false
+					}
+				});
+				}
+			});
+		});
 
+	});
 
+	function getDate() {
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
 
-});
+		if(dd < 10) dd = '0' + dd;
+		if(mm < 10) mm = '0'+ mm;
 
-    </script>
+		today = dd + '/' + mm + '/' + yyyy;
+		$("#date").text(today);
+	}
+	getDate();
+</script>
 {% endblock %}

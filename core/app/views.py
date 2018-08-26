@@ -11,6 +11,7 @@ from datetime import datetime, timedelta
 from django.http import JsonResponse
 from bson.json_util import dumps
 
+import pymongo
 from pymongo import MongoClient
 
 from app.models import *
@@ -39,7 +40,7 @@ def importFromFile(request):
 	for fname in iglob(os.path.expanduser('~/Tweets/*.txt')):
 		with open(fname) as fin:
 			tweet = json.load(fin)
-
+			
 			tweets = db.tweets
 			tweets.insert_one(tweet).inserted_id
 
@@ -60,27 +61,32 @@ def charts_two(request):
 	return render(request, 'app_templates/charts-two.html')
 
 def charts_json(request, prob_type):
-	three_days_ago = datetime.utcnow() - timedelta(days=1)
-
-	data = db.tweets.find({"prob_type": prob_type, 'created_at': { '$gte': three_days_ago }},{"created_at":1, "user.location":1, "followers_count":1, "reply_count":1, "retweet_count":1, "favorite_count":1, "timestamp_ms":1})
+	data = db.tweets.find({"prob_type": prob_type},{"created_at":1, "user.location":1, "followers_count":1, "reply_count":1, "retweet_count":1, "favorite_count":1, "timestamp_ms":1})
 	lista = []
 	for d in data:
 		lista.append(dumps(d))
-
 	return JsonResponse({"data": lista})
 
 def all_probs(request):
-	three_days_ago = datetime.utcnow() - timedelta(days=1)
-
 	data = db.tweets.aggregate([
-		{"$project": {"prob_type": 1, "user.location": 1}},
+		{"$project": {"prob_type": 1}},
 		{"$group":{"_id": "$prob_type", "count": {"$sum": 1}}}
 		])
 
 	lista = []
 	for d in data:
 		lista.append(dumps(d))
+	return JsonResponse({"data": lista, "total_vendas": 4250})
 
+def all_locations(request):
+	data = db.tweets.aggregate([
+		{"$project": {"user.location": 1}},
+		{"$group":{"_id": "$user.location", "count": {"$sum": 1}}}
+		])
+
+	lista = []
+	for d in data:
+		lista.append(dumps(d))
 	return JsonResponse({"data": lista})
 
 def tables(request):
@@ -104,7 +110,7 @@ def empresa(request, pk):
 		if form.is_valid():
 			empresa = form.save(commit=False)
 			empresa.save()
-			return redirect('/')  # TODO: redirect to the created topic page
+			return redirect('/home')  # TODO: redirect to the created topic page
 	else:
 		form = EmpresaForm()
 	return render(request, 'app_templates/empresa.html', {'empresa': empresa, 'form': form})

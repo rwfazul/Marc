@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Nome</title>
+    <title>Marc</title>
     
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -31,7 +31,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
 </head>
 <body>
 
@@ -46,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Varejo Admin v0.9</a>
+                <a class="navbar-brand" href="/dashboard" style="padding: 5px 15px !important;"><img src="{% static 'images/marc-logo.png' %}" width="10%"></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -278,8 +277,8 @@
                             <a href="/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Pontos Críticos<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Análises<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level toogle collapse in">
                                 <li>
                                     <a href="/charts/danificado">Produto danificado</a>
                                 </li>
@@ -289,17 +288,17 @@
                                 <li>
                                     <a href="/charts/extraviado">Produto extraviado</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="/charts-two">More Charts</a>
-                                </li>
+                                </li> -->
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="/empresa/1"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="/empresa/1"><i class="fa fa-edit fa-fw"></i> Personalização</a>
                         </li>
                         <li>
-                            <a href="/fix"><i class="fa fa-wrench fa-fw"></i> Fix<span class="fa arrow"></span></a>
+                            <a href="/fix"><i class="fa fa-wrench fa-fw"></i> Possíveis soluções</a>
                             <!-- /.nav-second-level -->
                         </li>
                     </ul>
@@ -334,7 +333,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{% static 'dist/js/sb-admin-2.js' %}"></script>
-
+    
     {% block javascript %}
     {% endblock %}
 

@@ -1,4 +1,5 @@
-# Marc - Monitoring and Analysis of the Relationship with the Consumer
+# MARC
+> Monitoring and Analysis of the Relationship with the Consumer
 
 Projeto criado durante o [SAP PressPlay Hackathon 2018](http://www.unisinos.br/noticias/inovacao/hackathon-sap), premiado com o [2º lugar](http://www.unisinos.br/noticias/inovacao/hackathon-sap) na competição.
 

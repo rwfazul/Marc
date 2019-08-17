@@ -1,7 +1,7 @@
 # MARC
 > Monitoring and Analysis of the Relationship with the Consumer
 
-Projeto criado durante o [SAP PressPlay Hackathon 2018](http://www.unisinos.br/noticias/inovacao/hackathon-sap), premiado com o [2º lugar](http://www.unisinos.br/noticias/inovacao/hackathon-sap) na competição.
+Projeto criado durante o [SAP PressPlay Hackathon 2018](http://www.unisinos.br/noticias/inovacao/hackathon-sap), premiado com o [2º lugar](https://www.ufsm.br/unidades-universitarias/ct/2018/09/03/premiacao-sap-press-play/) na competição.
 
 # Arco Team
 Uma das equipes representando a UFSM, formada por [EversonFeltrin](https://github.com/EversonFeltrin), [leosteil](https://github.com/leosteil), [lucaslioli](https://github.com/lucaslioli) e [rwfazul](https://github.com/rwfazul).
